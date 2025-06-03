@@ -4,7 +4,6 @@ import { useSidebar } from "@/routes/hooks/UseSidebar";
 import { ChevronsLeft } from "lucide-react";
 import { useState } from "react";
 import DashboardNav from "../shared/DashboardNav";
-
 type SidebarProps = {
   className?: string;
 };
