@@ -14,10 +14,8 @@ export const SidebarProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [isMinimized, setIsMinimized] = useState(false);
-  console.log("isMinimized", isMinimized);
 
   const toggle = () => {
-    console.log("Toggling sidebar");
     setIsMinimized(!isMinimized);
   };
 
