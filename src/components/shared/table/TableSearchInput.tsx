@@ -25,7 +25,7 @@ export default function TableSearchInput({
       setSearchParams({
         ...Object.fromEntries(searchParams),
         page: "1", // Reset to page 1 on new search
-        search: newSearchValue, // Update the search value
+        search: newSearchValue,
       });
     },
     [searchParams, setSearchParams]

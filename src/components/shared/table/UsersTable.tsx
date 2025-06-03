@@ -1,24 +1,18 @@
-
-
 import { columns } from "./Columns";
 import DataTable from "./DataTable";
-import StudentTableActions from "./StudentTableAction";
+import UsersTableActions from "./UsersTableAction";
 
-
-type TStudentsTableProps = {
+type TUsersTableProps = {
   users: any;
   page: number;
   totalUsers: number;
   pageCount: number;
 };
 
-export default function StudentsTable({
-  users,
-  pageCount,
-}: TStudentsTableProps) {
+export default function UsersTable({ users, pageCount }: TUsersTableProps) {
   return (
     <>
-      <StudentTableActions />
+      <UsersTableActions />
       {users && (
         <DataTable columns={columns} data={users} pageCount={pageCount} />
       )}

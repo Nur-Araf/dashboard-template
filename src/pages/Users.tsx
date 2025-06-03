@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
-import StudentsTable from "@/components/shared/table/UsersTable";
 import { DataTableSkeleton } from "@/components/shared/table/TableSkeleton";
+import UsersTable from "@/components/shared/table/UsersTable";
 
 // Define User type
 type User = {
@@ -50,12 +50,13 @@ export default function UsersPage() {
   const search = searchParams.get("search") || null;
   const offset = (page - 1) * pageLimit;
 
-  // Simulate filtering by name or gmail
+  // Filter users by name, gmail, or role
   const filteredUsers = search
     ? fakeUsers.filter(
         (user) =>
           user.name.toLowerCase().includes(search.toLowerCase()) ||
-          user.gmail.toLowerCase().includes(search.toLowerCase())
+          user.gmail.toLowerCase().includes(search.toLowerCase()) ||
+          user.role.toLowerCase().includes(search.toLowerCase())
       )
     : fakeUsers;
 
@@ -64,7 +65,7 @@ export default function UsersPage() {
   const totalUsers = filteredUsers.length;
   const pageCount = Math.ceil(totalUsers / pageLimit);
 
-  // Simulate loading state (set to false since we're using static data)
+  // Simulate loading state
   const isLoading = false;
   const data = {
     users: paginatedUsers,
@@ -75,7 +76,7 @@ export default function UsersPage() {
     return (
       <div className="p-5">
         <DataTableSkeleton
-          columnCount={4}
+          columnCount={5} // Adjusted for select, name, gmail, role, subscriptions, actions
           filterableColumnCount={2}
           searchableColumnCount={1}
         />
@@ -85,7 +86,7 @@ export default function UsersPage() {
 
   return (
     <div className="p-4 md:p-8">
-      <StudentsTable
+      <UsersTable
         users={data.users}
         page={page}
         totalUsers={data.total_users}
