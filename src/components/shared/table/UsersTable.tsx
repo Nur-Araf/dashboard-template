@@ -1,0 +1,27 @@
+
+
+import { columns } from "./Columns";
+import DataTable from "./DataTable";
+import StudentTableActions from "./StudentTableAction";
+
+
+type TStudentsTableProps = {
+  users: any;
+  page: number;
+  totalUsers: number;
+  pageCount: number;
+};
+
+export default function StudentsTable({
+  users,
+  pageCount,
+}: TStudentsTableProps) {
+  return (
+    <>
+      <StudentTableActions />
+      {users && (
+        <DataTable columns={columns} data={users} pageCount={pageCount} />
+      )}
+    </>
+  );
+}

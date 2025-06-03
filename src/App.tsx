@@ -5,8 +5,8 @@ import Signin from "./pages/Signin";
 import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
 import Profile from "./pages/Profile";
-import Users from "./pages/Users";
 import Settings from "./pages/Settings";
+import UsersPage from "./pages/Users";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/users",
-        element: <Users />,
+        element: <UsersPage />,
       },
     ],
   },

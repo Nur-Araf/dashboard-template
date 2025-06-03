@@ -56,3 +56,12 @@ export const navItems: NavItem[] = [
     label: "Log out",
   },
 ];
+
+export type User = {
+  id: number;
+  name: string;
+  gmail: string;
+  role: string;
+  subscriptions: string[];
+};
+
