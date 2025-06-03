@@ -13,12 +13,12 @@ export const navItems: NavItem[] = [
     icon: "admin",
     label: "admin",
   },
-  {
-    title: "Statistics",
-    href: "/statistics",
-    icon: "statistics",
-    label: "statistics",
-  },
+  // {
+  //   title: "Statistics",
+  //   href: "/statistics",
+  //   icon: "statistics",
+  //   label: "statistics",
+  // },
   {
     title: "Users",
     href: "/users",
@@ -31,12 +31,12 @@ export const navItems: NavItem[] = [
   //   icon: "subscription",
   //   label: "Subscription",
   // },
-  {
-    title: "Transection",
-    href: "/transaction",
-    icon: "transaction",
-    label: "Transection",
-  },
+  // {
+  //   title: "Transection",
+  //   href: "/transaction",
+  //   icon: "transaction",
+  //   label: "Transection",
+  // },
   {
     title: "Profile",
     href: "/profile",

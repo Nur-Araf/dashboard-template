@@ -1,10 +1,12 @@
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import DashboardLayout from "./components/dashboard/DashboardLayout";
-import { ThemeProvider } from "./components/provider/ThemeProvider";
 import Signin from "./pages/Signin";
 import Dashboard from "./pages/Dashboard";
-import Subscriptions from "./pages/Subscriptions";
+import Admin from "./pages/Admin";
+import Profile from "./pages/Profile";
+import Users from "./pages/Users";
+import Settings from "./pages/Settings";
 
 const router = createBrowserRouter([
   {
@@ -21,31 +23,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin",
-        element: <h1>Admin</h1>,
-      },
-      {
-        path: "/subscription",
-        element: <Subscriptions />,
-      },
-      {
-        path: "/statistics",
-        element: <h1>Statistics</h1>,
+        element: <Admin />,
       },
       {
         path: "/settings",
-        element: <h1>Settings</h1>,
-      },
-      {
-        path: "/transaction",
-        element: <h1>Transaction</h1>,
+        element: <Settings />,
       },
       {
         path: "/profile",
-        element: <h1>Profile</h1>,
+        element: <Profile />,
       },
       {
         path: "/users",
-        element: <h1>Users</h1>,
+        element: <Users />,
       },
     ],
   },
@@ -55,11 +45,7 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  return (
-    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-      <RouterProvider router={router} />
-    </ThemeProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

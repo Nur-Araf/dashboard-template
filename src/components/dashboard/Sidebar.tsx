@@ -1,7 +1,7 @@
 import { navItems } from "@/constants/data";
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/routes/hooks/UseSidebar";
-import { ChevronsLeft } from "lucide-react";
+import { PanelLeftClose } from "lucide-react";
 import { useState } from "react";
 import DashboardNav from "../shared/DashboardNav";
 type SidebarProps = {
@@ -35,9 +35,9 @@ export default function Sidebar({ className }: SidebarProps) {
         )}
       >
         {!isMinimized && <h1 className="text-2xl font-bold">Logo</h1>}
-        <ChevronsLeft
+        <PanelLeftClose
           className={cn(
-            "size-8 cursor-pointer rounded-full border bg-background text-foreground",
+            "size-8 cursor-pointer bg-transparent text-foreground",
             isMinimized && "rotate-180"
           )}
           onClick={handleToggle}
