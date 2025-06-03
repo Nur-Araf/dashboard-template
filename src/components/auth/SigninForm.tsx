@@ -28,12 +28,11 @@ export default function UserAuthForm() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const defaultValues = {
-    email: "demo@gmail.com",
-  };
+  // const defaultValues = {
+  //   email: "demo@gmail.com",
+  // };
   const form = useForm<UserFormValue>({
     resolver: zodResolver(formSchema),
-    defaultValues,
   });
 
   const onSubmit = async (data: UserFormValue) => {
@@ -52,7 +51,7 @@ export default function UserAuthForm() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-full space-y-2"
+          className="w-full space-y-6"
         >
           <FormField
             control={form.control}
@@ -113,7 +112,7 @@ export default function UserAuthForm() {
           </Button>
         </form>
       </Form>
-      <div className="relative">
+      {/* <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
         </div>
@@ -122,7 +121,7 @@ export default function UserAuthForm() {
             Or continue with
           </span>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
