@@ -24,113 +24,113 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export const description = "An interactive area chart";
+export const description = "An interactive area chart for SaaS admin panel";
 
 const chartData = [
-  { date: "2024-04-01", desktop: 222, mobile: 150 },
-  { date: "2024-04-02", desktop: 97, mobile: 180 },
-  { date: "2024-04-03", desktop: 167, mobile: 120 },
-  { date: "2024-04-04", desktop: 242, mobile: 260 },
-  { date: "2024-04-05", desktop: 373, mobile: 290 },
-  { date: "2024-04-06", desktop: 301, mobile: 340 },
-  { date: "2024-04-07", desktop: 245, mobile: 180 },
-  { date: "2024-04-08", desktop: 409, mobile: 320 },
-  { date: "2024-04-09", desktop: 59, mobile: 110 },
-  { date: "2024-04-10", desktop: 261, mobile: 190 },
-  { date: "2024-04-11", desktop: 327, mobile: 350 },
-  { date: "2024-04-12", desktop: 292, mobile: 210 },
-  { date: "2024-04-13", desktop: 342, mobile: 380 },
-  { date: "2024-04-14", desktop: 137, mobile: 220 },
-  { date: "2024-04-15", desktop: 120, mobile: 170 },
-  { date: "2024-04-16", desktop: 138, mobile: 190 },
-  { date: "2024-04-17", desktop: 446, mobile: 360 },
-  { date: "2024-04-18", desktop: 364, mobile: 410 },
-  { date: "2024-04-19", desktop: 243, mobile: 180 },
-  { date: "2024-04-20", desktop: 89, mobile: 150 },
-  { date: "2024-04-21", desktop: 137, mobile: 200 },
-  { date: "2024-04-22", desktop: 224, mobile: 170 },
-  { date: "2024-04-23", desktop: 138, mobile: 230 },
-  { date: "2024-04-24", desktop: 387, mobile: 290 },
-  { date: "2024-04-25", desktop: 215, mobile: 250 },
-  { date: "2024-04-26", desktop: 75, mobile: 130 },
-  { date: "2024-04-27", desktop: 383, mobile: 420 },
-  { date: "2024-04-28", desktop: 122, mobile: 180 },
-  { date: "2024-04-29", desktop: 315, mobile: 240 },
-  { date: "2024-04-30", desktop: 454, mobile: 380 },
-  { date: "2024-05-01", desktop: 165, mobile: 220 },
-  { date: "2024-05-02", desktop: 293, mobile: 310 },
-  { date: "2024-05-03", desktop: 247, mobile: 190 },
-  { date: "2024-05-04", desktop: 385, mobile: 420 },
-  { date: "2024-05-05", desktop: 481, mobile: 390 },
-  { date: "2024-05-06", desktop: 498, mobile: 520 },
-  { date: "2024-05-07", desktop: 388, mobile: 300 },
-  { date: "2024-05-08", desktop: 149, mobile: 210 },
-  { date: "2024-05-09", desktop: 227, mobile: 180 },
-  { date: "2024-05-10", desktop: 293, mobile: 330 },
-  { date: "2024-05-11", desktop: 335, mobile: 270 },
-  { date: "2024-05-12", desktop: 197, mobile: 240 },
-  { date: "2024-05-13", desktop: 197, mobile: 160 },
-  { date: "2024-05-14", desktop: 448, mobile: 490 },
-  { date: "2024-05-15", desktop: 473, mobile: 380 },
-  { date: "2024-05-16", desktop: 338, mobile: 400 },
-  { date: "2024-05-17", desktop: 499, mobile: 420 },
-  { date: "2024-05-18", desktop: 315, mobile: 350 },
-  { date: "2024-05-19", desktop: 235, mobile: 180 },
-  { date: "2024-05-20", desktop: 177, mobile: 230 },
-  { date: "2024-05-21", desktop: 82, mobile: 140 },
-  { date: "2024-05-22", desktop: 81, mobile: 120 },
-  { date: "2024-05-23", desktop: 252, mobile: 290 },
-  { date: "2024-05-24", desktop: 294, mobile: 220 },
-  { date: "2024-05-25", desktop: 201, mobile: 250 },
-  { date: "2024-05-26", desktop: 213, mobile: 170 },
-  { date: "2024-05-27", desktop: 420, mobile: 460 },
-  { date: "2024-05-28", desktop: 233, mobile: 190 },
-  { date: "2024-05-29", desktop: 78, mobile: 130 },
-  { date: "2024-05-30", desktop: 340, mobile: 280 },
-  { date: "2024-05-31", desktop: 178, mobile: 230 },
-  { date: "2024-06-01", desktop: 178, mobile: 200 },
-  { date: "2024-06-02", desktop: 470, mobile: 410 },
-  { date: "2024-06-03", desktop: 103, mobile: 160 },
-  { date: "2024-06-04", desktop: 439, mobile: 380 },
-  { date: "2024-06-05", desktop: 88, mobile: 140 },
-  { date: "2024-06-06", desktop: 294, mobile: 250 },
-  { date: "2024-06-07", desktop: 323, mobile: 370 },
-  { date: "2024-06-08", desktop: 385, mobile: 320 },
-  { date: "2024-06-09", desktop: 438, mobile: 480 },
-  { date: "2024-06-10", desktop: 155, mobile: 200 },
-  { date: "2024-06-11", desktop: 92, mobile: 150 },
-  { date: "2024-06-12", desktop: 492, mobile: 420 },
-  { date: "2024-06-13", desktop: 81, mobile: 130 },
-  { date: "2024-06-14", desktop: 426, mobile: 380 },
-  { date: "2024-06-15", desktop: 307, mobile: 350 },
-  { date: "2024-06-16", desktop: 371, mobile: 310 },
-  { date: "2024-06-17", desktop: 475, mobile: 520 },
-  { date: "2024-06-18", desktop: 107, mobile: 170 },
-  { date: "2024-06-19", desktop: 341, mobile: 290 },
-  { date: "2024-06-20", desktop: 408, mobile: 450 },
-  { date: "2024-06-21", desktop: 169, mobile: 210 },
-  { date: "2024-06-22", desktop: 317, mobile: 270 },
-  { date: "2024-06-23", desktop: 480, mobile: 530 },
-  { date: "2024-06-24", desktop: 132, mobile: 180 },
-  { date: "2024-06-25", desktop: 141, mobile: 190 },
-  { date: "2024-06-26", desktop: 434, mobile: 380 },
-  { date: "2024-06-27", desktop: 448, mobile: 490 },
-  { date: "2024-06-28", desktop: 149, mobile: 200 },
-  { date: "2024-06-29", desktop: 103, mobile: 160 },
-  { date: "2024-06-30", desktop: 446, mobile: 400 },
+  { date: "2024-04-01", activeUsers: 1200, newSignups: 150 },
+  { date: "2024-04-02", activeUsers: 1100, newSignups: 180 },
+  { date: "2024-04-03", activeUsers: 1300, newSignups: 120 },
+  { date: "2024-04-04", activeUsers: 1400, newSignups: 260 },
+  { date: "2024-04-05", activeUsers: 1500, newSignups: 290 },
+  { date: "2024-04-06", activeUsers: 1600, newSignups: 340 },
+  { date: "2024-04-07", activeUsers: 1450, newSignups: 180 },
+  { date: "2024-04-08", activeUsers: 1700, newSignups: 320 },
+  { date: "2024-04-09", activeUsers: 900, newSignups: 110 },
+  { date: "2024-04-10", activeUsers: 1350, newSignups: 190 },
+  { date: "2024-04-11", activeUsers: 1550, newSignups: 350 },
+  { date: "2024-04-12", activeUsers: 1400, newSignups: 210 },
+  { date: "2024-04-13", activeUsers: 1650, newSignups: 380 },
+  { date: "2024-04-14", activeUsers: 1250, newSignups: 220 },
+  { date: "2024-04-15", activeUsers: 1150, newSignups: 170 },
+  { date: "2024-04-16", activeUsers: 1200, newSignups: 190 },
+  { date: "2024-04-17", activeUsers: 1800, newSignups: 360 },
+  { date: "2024-04-18", activeUsers: 1600, newSignups: 410 },
+  { date: "2024-04-19", activeUsers: 1300, newSignups: 180 },
+  { date: "2024-04-20", activeUsers: 1000, newSignups: 150 },
+  { date: "2024-04-21", activeUsers: 1250, newSignups: 200 },
+  { date: "2024-04-22", activeUsers: 1350, newSignups: 170 },
+  { date: "2024-04-23", activeUsers: 1200, newSignups: 230 },
+  { date: "2024-04-24", activeUsers: 1550, newSignups: 290 },
+  { date: "2024-04-25", activeUsers: 1400, newSignups: 250 },
+  { date: "2024-04-26", activeUsers: 950, newSignups: 130 },
+  { date: "2024-04-27", activeUsers: 1650, newSignups: 420 },
+  { date: "2024-04-28", activeUsers: 1100, newSignups: 180 },
+  { date: "2024-04-29", activeUsers: 1450, newSignups: 240 },
+  { date: "2024-04-30", activeUsers: 1700, newSignups: 380 },
+  { date: "2024-05-01", activeUsers: 1250, newSignups: 220 },
+  { date: "2024-05-02", activeUsers: 1400, newSignups: 310 },
+  { date: "2024-05-03", activeUsers: 1300, newSignups: 190 },
+  { date: "2024-05-04", activeUsers: 1600, newSignups: 420 },
+  { date: "2024-05-05", activeUsers: 1750, newSignups: 390 },
+  { date: "2024-05-06", activeUsers: 1800, newSignups: 520 },
+  { date: "2024-05-07", activeUsers: 1650, newSignups: 300 },
+  { date: "2024-05-08", activeUsers: 1200, newSignups: 210 },
+  { date: "2024-05-09", activeUsers: 1300, newSignups: 180 },
+  { date: "2024-05-10", activeUsers: 1400, newSignups: 330 },
+  { date: "2024-05-11", activeUsers: 1500, newSignups: 270 },
+  { date: "2024-05-12", activeUsers: 1250, newSignups: 240 },
+  { date: "2024-05-13", activeUsers: 1200, newSignups: 160 },
+  { date: "2024-05-14", activeUsers: 1700, newSignups: 490 },
+  { date: "2024-05-15", activeUsers: 1750, newSignups: 380 },
+  { date: "2024-05-16", activeUsers: 1550, newSignups: 400 },
+  { date: "2024-05-17", activeUsers: 1800, newSignups: 420 },
+  { date: "2024-05-18", activeUsers: 1450, newSignups: 350 },
+  { date: "2024-05-19", activeUsers: 1300, newSignups: 180 },
+  { date: "2024-05-20", activeUsers: 1200, newSignups: 230 },
+  { date: "2024-05-21", activeUsers: 1000, newSignups: 140 },
+  { date: "2024-05-22", activeUsers: 950, newSignups: 120 },
+  { date: "2024-05-23", activeUsers: 1350, newSignups: 290 },
+  { date: "2024-05-24", activeUsers: 1400, newSignups: 220 },
+  { date: "2024-05-25", activeUsers: 1250, newSignups: 250 },
+  { date: "2024-05-26", activeUsers: 1300, newSignups: 170 },
+  { date: "2024-05-27", activeUsers: 1650, newSignups: 460 },
+  { date: "2024-05-28", activeUsers: 1350, newSignups: 190 },
+  { date: "2024-05-29", activeUsers: 900, newSignups: 130 },
+  { date: "2024-05-30", activeUsers: 1500, newSignups: 280 },
+  { date: "2024-05-31", activeUsers: 1200, newSignups: 230 },
+  { date: "2024-06-01", activeUsers: 1200, newSignups: 200 },
+  { date: "2024-06-02", activeUsers: 1700, newSignups: 410 },
+  { date: "2024-06-03", activeUsers: 1100, newSignups: 160 },
+  { date: "2024-06-04", activeUsers: 1650, newSignups: 380 },
+  { date: "2024-06-05", activeUsers: 950, newSignups: 140 },
+  { date: "2024-06-06", activeUsers: 1400, newSignups: 250 },
+  { date: "2024-06-07", activeUsers: 1500, newSignups: 370 },
+  { date: "2024-06-08", activeUsers: 1600, newSignups: 320 },
+  { date: "2024-06-09", activeUsers: 1700, newSignups: 480 },
+  { date: "2024-06-10", activeUsers: 1200, newSignups: 200 },
+  { date: "2024-06-11", activeUsers: 1000, newSignups: 150 },
+  { date: "2024-06-12", activeUsers: 1800, newSignups: 420 },
+  { date: "2024-06-13", activeUsers: 950, newSignups: 130 },
+  { date: "2024-06-14", activeUsers: 1650, newSignups: 380 },
+  { date: "2024-06-15", activeUsers: 1500, newSignups: 350 },
+  { date: "2024-06-16", activeUsers: 1550, newSignups: 310 },
+  { date: "2024-06-17", activeUsers: 1750, newSignups: 520 },
+  { date: "2024-06-18", activeUsers: 1100, newSignups: 170 },
+  { date: "2024-06-19", activeUsers: 1450, newSignups: 290 },
+  { date: "2024-06-20", activeUsers: 1600, newSignups: 450 },
+  { date: "2024-06-21", activeUsers: 1200, newSignups: 210 },
+  { date: "2024-06-22", activeUsers: 1500, newSignups: 270 },
+  { date: "2024-06-23", activeUsers: 1750, newSignups: 530 },
+  { date: "2024-06-24", activeUsers: 1100, newSignups: 180 },
+  { date: "2024-06-25", activeUsers: 1200, newSignups: 190 },
+  { date: "2024-06-26", activeUsers: 1650, newSignups: 380 },
+  { date: "2024-06-27", activeUsers: 1700, newSignups: 490 },
+  { date: "2024-06-28", activeUsers: 1200, newSignups: 200 },
+  { date: "2024-06-29", activeUsers: 1100, newSignups: 160 },
+  { date: "2024-06-30", activeUsers: 1650, newSignups: 400 },
 ];
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  users: {
+    label: "Users",
   },
-  desktop: {
-    label: "Desktop",
-    color: "var(--chart-1)",
+  activeUsers: {
+    label: "Active Users",
+    color: "var(--chart-1)", // Blue for active users
   },
-  mobile: {
-    label: "Mobile",
-    color: "var(--chart-2)",
+  newSignups: {
+    label: "New Signups",
+    color: "var(--chart-2)", // Green for new signups
   },
 } satisfies ChartConfig;
 
@@ -155,9 +155,9 @@ export function ChartAreaInteractive() {
     <Card className="pt-0">
       <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
         <div className="grid flex-1 gap-1">
-          <CardTitle>Area Chart - Interactive</CardTitle>
+          <CardTitle>SaaS Metrics - Interactive</CardTitle>
           <CardDescription>
-            Showing total visitors for the last 3 months
+            Showing active users and new signups for the last 3 months
           </CardDescription>
         </div>
         <Select value={timeRange} onValueChange={setTimeRange}>
@@ -187,27 +187,27 @@ export function ChartAreaInteractive() {
         >
           <AreaChart data={filteredData}>
             <defs>
-              <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="fillActiveUsers" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
-                  stopColor="var(--color-desktop)"
+                  stopColor="var(--color-activeUsers)"
                   stopOpacity={0.8}
                 />
                 <stop
                   offset="95%"
-                  stopColor="var(--color-desktop)"
+                  stopColor="var(--color-activeUsers)"
                   stopOpacity={0.1}
                 />
               </linearGradient>
-              <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="fillNewSignups" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
-                  stopColor="var(--color-mobile)"
+                  stopColor="var(--color-newSignups)"
                   stopOpacity={0.8}
                 />
                 <stop
                   offset="95%"
-                  stopColor="var(--color-mobile)"
+                  stopColor="var(--color-newSignups)"
                   stopOpacity={0.1}
                 />
               </linearGradient>
@@ -242,17 +242,17 @@ export function ChartAreaInteractive() {
               }
             />
             <Area
-              dataKey="mobile"
+              dataKey="newSignups"
               type="natural"
-              fill="url(#fillMobile)"
-              stroke="var(--color-mobile)"
+              fill="url(#fillNewSignups)"
+              stroke="var(--color-newSignups)"
               stackId="a"
             />
             <Area
-              dataKey="desktop"
+              dataKey="activeUsers"
               type="natural"
-              fill="url(#fillDesktop)"
-              stroke="var(--color-desktop)"
+              fill="url(#fillActiveUsers)"
+              stroke="var(--color-activeUsers)"
               stackId="a"
             />
             <ChartLegend content={<ChartLegendContent />} />

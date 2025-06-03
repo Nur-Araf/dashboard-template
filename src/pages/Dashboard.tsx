@@ -13,6 +13,7 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs.js";
 import { ChartAreaInteractive } from "./StaticesChart";
+import Overview from "@/components/dashboard/Overview";
 
 export default function DashboardPage() {
   return (
@@ -137,7 +138,9 @@ export default function DashboardPage() {
                 <CardHeader>
                   <CardTitle>Overview</CardTitle>
                 </CardHeader>
-                <CardContent className="pl-2">{/* <Overview /> */}</CardContent>
+                <CardContent className="mt-4 mr-5">
+                  <Overview />
+                </CardContent>
               </Card>
               <Card className="col-span-4 md:col-span-3">
                 <CardHeader>
