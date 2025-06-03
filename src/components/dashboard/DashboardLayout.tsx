@@ -26,7 +26,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
             </button>
             <Header />
           </div>
-          <main className="relative p-4 flex-1 overflow-hidden rounded-tl-xl bg-background focus:outline-none ">
+          <main className="relative flex-1 overflow-y-auto rounded-tl-xl bg-background focus:outline-none ">
             {children}
           </main>
         </div>
