@@ -14,7 +14,7 @@ interface FormData {
   bio: string;
 }
 
-const Settings: React.FC = () => {
+const AdminProfile: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "John Doe",
     phone: "+1 (555) 123-4567",
@@ -33,28 +33,38 @@ const Settings: React.FC = () => {
   };
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log("File input changed:", e.target.files);
     const file = e.target.files?.[0];
     if (file) {
+      if (!file.type.startsWith("image/")) {
+        console.error("Selected file is not an image");
+        return;
+      }
       setImage(file);
       const reader = new FileReader();
       reader.onloadend = () => {
+        console.log("Preview URL:", reader.result);
         setPreview(reader.result as string);
       };
+      reader.onerror = () => {
+        console.error("Error reading file");
+      };
       reader.readAsDataURL(file);
+    } else {
+      console.log("No file selected");
     }
   };
 
   const handleSave = () => {
-    // Perform save operation (e.g., API call)
     console.log("Saving data:", formData, image);
-    // Example: await saveUserData(formData, image);
-    setIsEditing(false); // Exit edit mode after saving
+    setIsEditing(false);
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
+    console.log("Form submitted");
     if (isEditing) {
-      handleSave(); // Call save logic on form submission
+      handleSave();
     }
   };
 
@@ -66,35 +76,44 @@ const Settings: React.FC = () => {
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Profile Image Section */}
-            <div className="flex items-center space-x-4">
-              <Avatar className="w-24 h-24">
-                <AvatarImage
-                  src={preview || "https://via.placeholder.com/150"}
-                  alt="Profile"
-                />
-                <AvatarFallback>JD</AvatarFallback>
-              </Avatar>
+            <div className="flex items-center justify-between space-x-4">
+              <div className="flex items-center space-x-4">
+                <Avatar className="w-24 h-24" key={preview || "default"}>
+                  <AvatarImage
+                    src={preview || "https://via.placeholder.com/150"}
+                    alt="Profile"
+                  />
+                  <AvatarFallback>JD</AvatarFallback>
+                </Avatar>
+                <div onClick={() => setIsEditing(true)}>
+                  <Label
+                    htmlFor="image"
+                    className="flex items-center gap-2 cursor-pointer"
+                  >
+                    <Camera className="w-5 h-5" />
+                    <span>Change Profile Picture</span>
+                  </Label>
+                  <Input
+                    id="image"
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={handleImageChange}
+                    disabled={!isEditing}
+                  />
+                </div>
+              </div>
               <div>
-                <Label
-                  htmlFor="image"
-                  className="flex items-center gap-2 cursor-pointer"
-                >
-                  <Camera className="w-5 h-5" />
-                  <span>Change Profile Picture</span>
-                </Label>
                 <Input
-                  id="image"
-                  type="file"
-                  accept="image/*"
-                  className="hidden"
-                  onChange={handleImageChange}
-                  disabled={!isEditing}
+                  id="role"
+                  name="role"
+                  type="text"
+                  value={"Role: Administrator"}
+                  disabled
                 />
               </div>
             </div>
 
-            {/* Personal Information Section */}
             <div className="space-y-4">
               <div>
                 <Label htmlFor="name" className="text-base">
@@ -164,7 +183,10 @@ const Settings: React.FC = () => {
             {!isEditing && (
               <Button
                 className="w-full mt-4"
-                onClick={() => setIsEditing(true)}
+                onClick={() => {
+                  console.log("Entering edit mode");
+                  setIsEditing(true);
+                }}
                 variant={"outline"}
               >
                 <Pencil className="mr-2 h-4 w-4" /> Edit Profile
@@ -177,4 +199,4 @@ const Settings: React.FC = () => {
   );
 };
 
-export default Settings;
+export default AdminProfile;

@@ -1,14 +1,18 @@
 import "./App.css";
-import { createBrowserRouter, Navigate, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
 import DashboardLayout from "./components/dashboard/DashboardLayout";
 import Signin from "./pages/Signin";
 import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
-import Profile from "./pages/Profile";
-import Settings from "./pages/Settings";
 import UsersPage from "./pages/Users";
 import NotFound from "./components/shared/PageNotFound";
 import { Toaster } from "sonner";
+import AdminProfile from "./pages/AdminProfile";
 
 const router = createBrowserRouter([
   {
@@ -27,13 +31,10 @@ const router = createBrowserRouter([
         path: "/admins",
         element: <Admin />,
       },
-      {
-        path: "/settings",
-        element: <Settings />,
-      },
+
       {
         path: "/profile",
-        element: <Profile />,
+        element: <AdminProfile />,
       },
       {
         path: "/users",

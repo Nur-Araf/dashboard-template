@@ -43,12 +43,12 @@ export const navItems: NavItem[] = [
     icon: "user",
     label: "Profile",
   },
-  {
-    title: "Settings",
-    href: "/settings",
-    icon: "settings",
-    label: "settings",
-  },
+  // {
+  //   title: "Settings",
+  //   href: "/settings",
+  //   icon: "settings",
+  //   label: "settings",
+  // },
   {
     title: "Log out",
     href: "/login",
