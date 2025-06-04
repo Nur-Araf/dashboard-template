@@ -52,7 +52,7 @@ const Profile = () => {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-lg">
+            <Label htmlFor="name" className="text-base">
               Full Name
             </Label>
             {isEditing ? (
@@ -68,7 +68,7 @@ const Profile = () => {
             )}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-lg">
+            <Label htmlFor="email" className="text-base">
               Email
             </Label>
             {isEditing ? (
@@ -85,7 +85,7 @@ const Profile = () => {
             )}
           </div>
           <div className="space-y-2">
-            <Label className="text-lg">Role</Label>
+            <Label className="text-base">Role</Label>
             <p className="dark:text-gray-200 text-base">{user.role}</p>
           </div>
           <Button
