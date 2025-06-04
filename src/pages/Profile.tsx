@@ -55,38 +55,39 @@ const Profile = () => {
             <Label htmlFor="name" className="text-base">
               Full Name
             </Label>
-            {isEditing ? (
-              <Input
-                id="name"
-                name="name"
-                value={user.name}
-                onChange={handleChange}
-                className="w-full text-lg py-3 px-4" // Increased padding and font size
-              />
-            ) : (
-              <p className="dark:text-gray-200 text-base">{user.name}</p>
-            )}
+            <Input
+              id="name"
+              name="name"
+              value={user.name}
+              disabled={!isEditing}
+              onChange={handleChange}
+              className="mt-2"
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="email" className="text-base">
               Email
             </Label>
-            {isEditing ? (
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                value={user.email}
-                onChange={handleChange}
-                className="w-full text-lg py-3 px-4" // Increased padding and font size
-              />
-            ) : (
-              <p className="dark:text-gray-200 text-base">{user.email}</p>
-            )}
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              value={user.email}
+              onChange={handleChange}
+              disabled={!isEditing}
+              className="mt-2"
+            />
           </div>
           <div className="space-y-2">
             <Label className="text-base">Role</Label>
-            <p className="dark:text-gray-200 text-base">{user.role}</p>
+            <Input
+              id="role"
+              name="role"
+              type="text"
+              value={user.role}
+              disabled
+              className="mt-2"
+            />
           </div>
           <Button
             onClick={isEditing ? handleSave : handleEdit}

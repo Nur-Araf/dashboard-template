@@ -106,7 +106,7 @@ const Settings: React.FC = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Enter your name"
-                  className="mt-1"
+                  className="mt-2"
                   disabled={!isEditing}
                 />
               </div>
@@ -120,7 +120,7 @@ const Settings: React.FC = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   placeholder="Enter your phone number"
-                  className="mt-1"
+                  className="mt-2"
                   disabled={!isEditing}
                 />
               </div>
@@ -135,7 +135,7 @@ const Settings: React.FC = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Enter your email"
-                  className="mt-1"
+                  className="mt-2"
                   disabled={!isEditing}
                 />
               </div>
@@ -157,7 +157,7 @@ const Settings: React.FC = () => {
             </div>
 
             {isEditing && (
-              <Button type="submit" className="w-full mt-4">
+              <Button type="submit" className="w-full mt-4" variant={"default"}>
                 <Save className="mr-2 h-4 w-4" /> Save
               </Button>
             )}
@@ -165,6 +165,7 @@ const Settings: React.FC = () => {
               <Button
                 className="w-full mt-4"
                 onClick={() => setIsEditing(true)}
+                variant={"outline"}
               >
                 <Pencil className="mr-2 h-4 w-4" /> Edit Profile
               </Button>
