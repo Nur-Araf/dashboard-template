@@ -9,6 +9,7 @@ type User = {
   gmail: string;
   role: string;
   subscriptions: string[];
+  joinDate: string;
 };
 
 // Fake static data
@@ -19,6 +20,7 @@ const fakeUsers: User[] = [
     gmail: "john.doe@gmail.com",
     role: "Admin",
     subscriptions: ["Premium", "Newsletter"],
+    joinDate: "2023-01-15",
   },
   {
     id: 2,
@@ -26,6 +28,7 @@ const fakeUsers: User[] = [
     gmail: "jane.smith@gmail.com",
     role: "User",
     subscriptions: ["Basic"],
+    joinDate: "2023-06-22",
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ const fakeUsers: User[] = [
     gmail: "alex.johnson@gmail.com",
     role: "Editor",
     subscriptions: ["Premium", "Pro"],
+    joinDate: "2024-02-10",
   },
   {
     id: 4,
@@ -40,6 +44,7 @@ const fakeUsers: User[] = [
     gmail: "sarah.williams@gmail.com",
     role: "User",
     subscriptions: ["Free", "Newsletter"],
+    joinDate: "2024-08-05",
   },
 ];
 
@@ -75,7 +80,7 @@ export default function UsersPage() {
     return (
       <div className="p-5">
         <DataTableSkeleton
-          columnCount={4} // Adjusted for select, name, gmail, subscriptions, actions
+          columnCount={6} // Adjusted for select, name, gmail, joinDate, subscriptions, details, admin access
           filterableColumnCount={2}
           searchableColumnCount={1}
         />

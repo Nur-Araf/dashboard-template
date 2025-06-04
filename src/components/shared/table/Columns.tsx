@@ -1,43 +1,42 @@
-import { Checkbox } from "@/components/ui/checkbox";
 import { type ColumnDef } from "@tanstack/react-table";
-import { CellAction } from "./CellAction";
+import { Calendar } from "lucide-react";
+
 import type { User } from "@/constants/data";
+import { AdminAccessCell, DetailsCell, SubscriptionsCell } from "./ColumnsComponents";
 
 export const columns: ColumnDef<User>[] = [
   {
-    id: "select",
-    header: ({ table }) => (
-      <Checkbox
-        checked={table.getIsAllPageRowsSelected()}
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
-      />
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-      />
-    ),
-    enableSorting: false,
-    enableHiding: false,
-  },
-  {
     accessorKey: "name",
-    header: "NAME",
+    header: () => <div className="pl-4">NAME</div>,
+    cell: ({ row }) => <div className="pl-4">{row.original.name}</div>,
   },
   {
     accessorKey: "gmail",
-    header: "GMAIL",
+    header: "EMAIL",
+  },
+  {
+    accessorKey: "joinDate",
+    header: "JOIN DATE",
+    cell: ({ row }) => (
+      <div className="flex items-center gap-2">
+        <Calendar className="h-4 w-4" />
+        {row.original.joinDate}
+      </div>
+    ),
   },
   {
     accessorKey: "subscriptions",
     header: "SUBSCRIPTIONS",
-    cell: ({ row }) => <div>{row.original.subscriptions.join(", ")}</div>,
+    cell: ({ row }) => <SubscriptionsCell row={row} />,
   },
   {
-    id: "actions",
-    cell: ({ row }) => <CellAction data={row.original} />,
+    id: "details",
+    header: "DETAILS",
+    cell: ({ row }) => <DetailsCell row={row} />,
+  },
+  {
+    id: "adminAccess",
+    header: "ADMIN ACCESS",
+    cell: ({ row }) => <AdminAccessCell row={row} />,
   },
 ];
