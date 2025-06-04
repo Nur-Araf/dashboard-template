@@ -3,7 +3,6 @@ import { type ColumnDef } from "@tanstack/react-table";
 import { CellAction } from "./CellAction";
 import type { User } from "@/constants/data";
 
-
 export const columns: ColumnDef<User>[] = [
   {
     id: "select",
@@ -31,10 +30,6 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "gmail",
     header: "GMAIL",
-  },
-  {
-    accessorKey: "role",
-    header: "ROLE",
   },
   {
     accessorKey: "subscriptions",

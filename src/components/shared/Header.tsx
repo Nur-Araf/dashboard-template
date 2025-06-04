@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <div className="flex flex-1 items-center justify-between bg-secondary px-4">
       <Heading title={headingText} />
-      <div className="ml-4 flex items-center md:ml-6">
+      <div className="ml-4 flex gap-6 items-center md:ml-6">
         <UserNav />
         <ModeToggle />
       </div>

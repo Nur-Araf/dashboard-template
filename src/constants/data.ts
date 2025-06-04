@@ -61,7 +61,7 @@ export type User = {
   id: number;
   name: string;
   gmail: string;
-  role: string;
+  // role: string;
   subscriptions: string[];
 };
 

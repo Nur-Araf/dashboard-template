@@ -50,13 +50,12 @@ export default function UsersPage() {
   const search = searchParams.get("search") || null;
   const offset = (page - 1) * pageLimit;
 
-  // Filter users by name, gmail, or role
+  // Filter users by name or gmail
   const filteredUsers = search
     ? fakeUsers.filter(
         (user) =>
           user.name.toLowerCase().includes(search.toLowerCase()) ||
-          user.gmail.toLowerCase().includes(search.toLowerCase()) ||
-          user.role.toLowerCase().includes(search.toLowerCase())
+          user.gmail.toLowerCase().includes(search.toLowerCase())
       )
     : fakeUsers;
 
@@ -76,7 +75,7 @@ export default function UsersPage() {
     return (
       <div className="p-5">
         <DataTableSkeleton
-          columnCount={5} // Adjusted for select, name, gmail, role, subscriptions, actions
+          columnCount={4} // Adjusted for select, name, gmail, subscriptions, actions
           filterableColumnCount={2}
           searchableColumnCount={1}
         />

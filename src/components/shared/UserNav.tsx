@@ -13,6 +13,16 @@ import {
 import { useRouter } from "@/routes/hooks/UseRouter";
 import { Link } from "react-router-dom";
 
+
+const getInitials = (name: string): string => {
+  return name
+    .split(" ")
+    .map((word) => word.charAt(0))
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+};
+
 export default function UserNav() {
   const router = useRouter();
   const handleLogout = () => {
@@ -26,11 +36,11 @@ export default function UserNav() {
           <Avatar className="h-14 w-14">
             <AvatarImage
               src={
-                "https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001882.png"
+                ""
               }
-              alt={""}
+              alt={"User Avatar"}
             />
-            <AvatarFallback>hello</AvatarFallback>
+            <AvatarFallback>{getInitials("Admin Page")}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
