@@ -14,6 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Enter a valid email address" }),
@@ -28,9 +29,7 @@ export default function UserAuthForm() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  // const defaultValues = {
-  //   email: "demo@gmail.com",
-  // };
+
   const form = useForm<UserFormValue>({
     resolver: zodResolver(formSchema),
   });
@@ -38,6 +37,16 @@ export default function UserAuthForm() {
   const onSubmit = async (data: UserFormValue) => {
     setLoading(true);
     console.log("data", data);
+
+    // Show toast notification
+    toast.success("Form submitted successfully!", {
+      description: `Email: ${data.email}`,
+      action: {
+        label: "Close",
+        onClick: () => console.log("Toast closed"),
+      },
+    });
+
     router.push("/");
     setLoading(false);
   };
@@ -65,6 +74,7 @@ export default function UserAuthForm() {
                     placeholder="Enter your email..."
                     disabled={loading}
                     {...field}
+                    className="autofill:bg-transparent" // Add class for autofill fix
                   />
                 </FormControl>
                 <FormMessage />
@@ -85,6 +95,7 @@ export default function UserAuthForm() {
                       placeholder="Enter your password..."
                       disabled={loading}
                       {...field}
+                      className="autofill:bg-transparent" // Add class for autofill fix
                     />
                     <Button
                       type="button"
@@ -112,16 +123,6 @@ export default function UserAuthForm() {
           </Button>
         </form>
       </Form>
-      {/* <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            Or continue with
-          </span>
-        </div>
-      </div> */}
     </>
   );
 }

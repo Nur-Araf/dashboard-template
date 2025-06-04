@@ -8,6 +8,7 @@ import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import UsersPage from "./pages/Users";
 import NotFound from "./components/shared/PageNotFound";
+import { Toaster } from "sonner";
 
 const router = createBrowserRouter([
   {
@@ -54,7 +55,12 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <Toaster /> {/* ✅ Global toast container */}
+    </>
+  );
 }
 
 export default App;

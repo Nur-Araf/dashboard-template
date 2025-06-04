@@ -8,9 +8,9 @@ import { ThemeProvider } from "./components/provider/ThemeProvider.tsx";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <HelmetProvider>
-      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-        <App />
-      </ThemeProvider>
+        <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+          <App />
+        </ThemeProvider>
     </HelmetProvider>
   </StrictMode>
 );
