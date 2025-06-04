@@ -23,16 +23,12 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "/admin",
+        path: "/admins",
         element: <Admin />,
       },
       {
         path: "/settings",
         element: <Settings />,
-      },
-      {
-        path: "/dashboard/user/:id",
-        element: <h1>Do We Need this.</h1>,
       },
       {
         path: "/profile",

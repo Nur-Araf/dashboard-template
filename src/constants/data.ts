@@ -8,10 +8,10 @@ export const navItems: NavItem[] = [
     label: "Dashboard",
   },
   {
-    title: "Admin",
-    href: "/admin",
+    title: "Admins",
+    href: "/admins",
     icon: "admin",
-    label: "admin",
+    label: "admins",
   },
   // {
   //   title: "Statistics",
@@ -67,3 +67,11 @@ export type User = {
   subscriptions: string[];
 };
 
+export interface AdminUser {
+  name: string;
+  gmail: string;
+  joinDate: string;
+  role?: string;
+  imageUrl?: string;
+  phoneNumber?: string;
+}
